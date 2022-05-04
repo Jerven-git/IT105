@@ -1,0 +1,74 @@
+//HTML
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<div id="app"></div>
+
+	<script src="src/index.js">
+	</script>
+</body>
+
+</html>
+
+//INDEX.JS
+
+import React from "react";
+import ReactDOM from "react-dom";
+import { Time } from "./time.js";
+
+ReactDOM.render(
+  <div>
+    <p>{Time()};</p>
+  </div>,
+  document.getElementById("app")
+);
+
+//TIME.JS
+
+function Time() {
+  var day = new Date();
+  var hr = day.getHours();
+
+  if (
+    hr == 1 ||
+    hr == 2 ||
+    hr == 3 ||
+    hr == 4 ||
+    hr == 5 ||
+    hr == 6 ||
+    hr == 7 ||
+    hr == 8
+  ) {
+    document.write("<h1>Good Morning!</h1>");
+  }
+  if (hr == 12 || hr == 13 || hr == 14 || hr == 15) {
+    document.write("<h1>Good Afternoon!</h1>");
+  }
+  if (hr == 17 || hr == 18 || hr == 19 || hr == 20 || hr == 21 || hr == 22) {
+    document.write("<h1>Good Evening!</h1>");
+  }
+}
+
+export { Time };
+
+//CSS
+
+body {
+  font-family: sans-serif;
+}
+.gmorning {
+  color: red;
+}
+.gafternoon {
+  color: green;
+}
+.evenings {
+  color: blue;
+}
