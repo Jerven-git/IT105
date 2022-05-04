@@ -1,0 +1,13 @@
+1. def func(name, age):
+    print('name = ',name)
+    print('age = ',Image)
+func('Jerven', 22)
+
+2.
+const addTo = x => y => x + y
+
+var addToTen = addTo(10)
+
+addToTen(3)
+
+13
