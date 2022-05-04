@@ -1,0 +1,77 @@
+//HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<div id="app"></div>
+
+	<script src="src/index.js">
+	</script>
+</body>
+
+</html>
+
+//INDEX.JS
+
+import React from "react";
+import ReactDOM from "react-dom";
+import Header from "./header";
+import Footer from "./footer";
+import Note from "./note";
+
+ReactDOM.render(
+  <div>
+    <Header />
+    <Note />
+    <Footer />
+  </div>,
+  document.getElementById("app")
+);
+
+//FOOTER.JSX
+
+import React from "react";
+const year = new Date().getFullYear();
+function Footer() {
+  return <footer style={{background: "yellow", color: "red"}}><p>{year}</p></footer>;
+}
+
+export default Footer;
+
+
+//HEADER.JSX
+
+import React from "react";
+
+function Header() {
+  return <header style={{background: "blue", color: "white"}}><h1>My todo things</h1></header>;
+}
+
+export default Header;
+
+
+//NOTE.JSX
+
+import React from "react";
+
+function Note() {
+  return <div style={{background: "red", color: "white"}}><h1>My Todo List</h1></div>;
+}
+
+export default Note;
+
+//CSS
+
+body {
+  font-family: sans-serif;
+}
+header {
+  background-color: blue;
+  color: white;
+  width: 100%;
+}
