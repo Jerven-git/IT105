@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Carousel</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+		<div class="slider">
+			<div class="img-box">
+				<img src="a.png" alt="" class="slider-img">
+			</div>
+
+			<button class="btn" onclick="prev()">Prev</button>
+			<button class="btn" onclick="next()">Next</button>
+		</div>
+
+
+	<script src="script.js"></script>
+</body>
+</html>
+
+Css>>>
+
+.slider {
+	margin:50px auto;
+	width: 50%;
+}
+
+.img-box img{
+	width: 100%;
+}
+
+.btn {
+	border:none;
+	outline: none;
+	background: #888;
+	padding: 10px 30px;
+	font-size: 20px;
+	color: #ddd;
+	cursor: pointer;
+	margin: 10px auto;
+}
+
+.btn:hover{
+	background: #111;
+}
+
+js>>>
+
+var slider_img = document.querySelector('.slider-img');
+var images = ['a.png', 'b.png', 'c.png', 'd.jpg', 'e.jpg', 'f.jpg', 'g.jpg', 'h.png', 'i.jpg'];
+var x = 0;
+
+function prev(){
+	if(x <= 0 ) x = images.length;
+	x--;
+	return setImg();
+}
+
+
+function next(){
+	if (x >= images.length - 1) x = -1;
+	x++
+	return setImg();
+}
+
+function setImg(){
+	return slider_img.setAttribute('src','' + images[x]);
